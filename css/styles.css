@@ -147,6 +147,18 @@ img {
 .header-link {
   padding-top: 32px;
   padding-bottom: 32px;
+  position: relative;
+}
+
+.header-link::after {
+  content: '';
+  display: block;
+  background: #2196f3;
+  height: 4px;
+  border-radius: 2px;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
 }
 
 .header-mail,
@@ -311,6 +323,28 @@ img {
   margin-right: 30px;
 }
 
+.activity-item {
+  position: relative;
+}
+
+.activity-description {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--primary-white-color);
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+  padding: 27px 82px;
+}
 /* -------------------TEAM---------------- */
 .team {
   background-color: #f5f4fa;
@@ -393,11 +427,13 @@ img {
 }
 
 .socials-link:hover,
-.socials-link:focus,
+.socials-link:focus {
+  background-color: var(--accent-color);
+}
+
 .socials-link:hover .socials-icon,
 .socials-link:focus .socials-icon {
   fill: #ffffff;
-  background-color: var(--accent-color);
 }
 
 /* --------------CLIENTS---------------- */
@@ -630,4 +666,50 @@ img {
   background-color: var(--primary-white-color);
   padding: 20px 24px;
   border: 1px solid #eeeeee;
+}
+
+/* --------------MODAL-WINDOW---------- */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-white-color);
 }
